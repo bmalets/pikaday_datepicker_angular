@@ -21,8 +21,11 @@ import 'conversion.dart';
 
 @Component(
     selector: 'pikaday',
-    template:
-        '<input type="text" id="{{id}}" class="{{cssClasses}}" placeholder="{{placeholder}}">')
+    template: '''
+        <input type="text" id="{{ id }}" class="{{ cssClasses }}" placeholder="{{ placeholder }}">
+        <label [attr.for]="id">{{ placeholder }}</label>
+    '''
+)
 class PikadayComponent implements AfterViewInit {
   static int _componentCounter = 0;
   final String id = "pikadayInput${++_componentCounter}";
